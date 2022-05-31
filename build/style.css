@@ -1,0 +1,303 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: texto;}
+
+@font-face {
+    font-family: texto;
+    src: url(ArlonSemiBold.ttf);}
+
+/*ESTO ES TODO EL FONDO NEGRO QUE OCUPA 
+TODA LA PANTALLA Y ADENTRO TIENE MAS DIVS
+|||||||||||||||||||||||||||||||||||||||*/
+#background{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(54, 20, 0);
+    position: absolute;}
+
+/*ESTO ES LA IMAGEN QUE DA TEXTURA AL FONDO ESTA DENTRO DE DIV BACKGROUND*/
+#noise{
+    width: 100%;
+    height: 100%;
+    background-image: url(noise.png);
+    opacity: 0.1;
+    position:absolute;}
+
+/*ESTO ES LAS PARTICULAS EN MP4 DE BACKGROUND*/
+video{
+    position: absolute;
+    display: flex;
+    mix-blend-mode: screen;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;}
+
+/*(CAPA 1 OCULTO) LA PLANTA PRINCIPAL DONDE ESTA ABSOLUTAMENTE TODO ADENTRO
+ESTA CAPA NO SE MUEVE CON EL MOUSE*/
+#contenido{
+    width: 95%;
+    height: 95%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: flex;}
+
+/*(CAPA 2 OCULTO) TIENE 2 HIJOS | LA CAPA 
+SI ESTA CON MOUSEMOVE*/
+#box{
+    width: 98%;
+    height: 98%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: flex ;
+    flex-direction: column;}
+
+/*(CAPA 3 => 1 DE 2 SECIONES) ESTA ES EL CUADRO NEGRO DONDE DICE 
+DOUGLAS PROYECT, SI ES VISIBLE
+||||||||||||||||||||||||||||||*/
+#boxcabesera{
+    max-width: 600px;
+    width:auto;
+    height: 60px;
+    left: 50%;
+    transform: translate(-50%);
+    position:relative;
+    margin-bottom: 10px;
+    background-color: rgba(0, 255, 200, 0.219);
+    border-radius: 5px;
+    overflow: hidden;}
+
+/*TEXTO: DOUGLAS PROYECT | SOLO ES ESO*/
+h1{
+    margin: auto;
+    padding: 0;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-top: 9px;}
+
+/*(CAPA 3 OCULTO) => 2 DE 2 SECCIONES | ABAJO DE DOUGLAS PROYECT
+,NO SE MUEVE(ESTATICO) TIENE 1 HIJO, ADENTRO DE ESO ESTA EL   =>BOX<=    
+DONDE SE ALOJA DIV-DESCRIPCION-DIV
+Y BOX COMPLETA DE LOS CUADROS DE ARTICULOS*/
+#preboxarticulos{
+    width:100%;
+    height: 100%;
+    margin: auto;
+    position: relative;}
+
+/*(CAPA 4 OCULTO) DENTRO DE AQUI ESTA DIV-DESCRIPCION-DIV Y 
+BOX COMPLETA DE LOS CUADROS DE ARTICULOS*/
+#boxarticulosmove{
+    width:98%;
+    height: 98%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;}
+
+/*(CAPA 4 VISIBLE) EL CUADRO DONDE ESTA LA DESCRIPCION*/
+#description{
+    width: 90%;
+    height: 5%;
+    left: 50%;
+    margin-bottom: 10px;
+    transform: translate(-50%);
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    overflow-y: auto;}
+
+/*(CAPA VISIBLE) ESTA DEJBAJO DE LA DESCRIPCION, ES EN EL MISMO DIV
+||||||||||||||||||||||||||||||||*/
+.sectionarticulos{
+    width: 90%;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    overflow-y: auto;}
+
+/*TEXTO : DE LA DESCRIPCION
+||||||||||||||||||||||||||||||*/
+h2{
+    margin: 10px;
+    padding: 0;
+    font-size: 17px;
+    color: rgb(0, 0, 0);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+
+/*EL MARGEN INVISIBLE PRINCIPAL DONDE ESTAN LOS ARTICULOS
+,SE EXTIENDE*/
+.marginboxarticulos{
+    width: 250px;
+    height: 250px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+
+/*LA CAJA QUE SE EXIENDE POR EL SEGUIMIENTO DEL MARGEN*/
+.boxarticulos{
+    width: 90%;
+    height: 90%;
+    position: relative;
+    margin: auto;
+    display: flex;}
+
+/*(VISIBLE SI NO HAY IMAGEN)LA CAJA CUADRADA A PULSO DE PIXEL DONDE VA EL ARTICULO
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+.articulo{
+   width: 100%;
+   height: 225px;
+   position: relative;
+   background-color: rgba(255, 255, 255, 0.095);
+   border-radius: 5px; 
+   display: flex;
+   overflow: hidden;}
+
+/*ES LA CONFIGURACON DE LA IMAGEN PARA QUE QUEDE BIEN EN EL CUADRO*/
+.imagens{
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;}
+
+/*(VISIBLE) ES LA CAJA DONDE ESTAN TODAS LAS 
+CAJITAS DE LOS NOMBRES DE LOS ARTICULOS
+|||||||||||||||||||||||||||||||||||*/
+.articulodescription{
+    width: 100%;
+    height: 110px;
+    background-color: rgba(255, 255, 255, 0.095);
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    display: flex;
+    opacity: 0;
+    transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 5px;
+    flex-direction: column;}
+
+/*LAS LETRAS DE NOMBRE DE ARTICULOS + LAS FECHAS TAMBIEN
+||||||||||||||||||||||||||||||||||||||||*/
+h3{ 
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: antiquewhite;
+    margin: 5px;
+    line-height: 1;
+    text-align: center;}
+
+/*(INVISIBLE) ES LA CAJA DONDE SE ALOJA EL NOMBRE*/
+.nombrearticulo{
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    overflow: hidden;
+    overflow-y: auto;}
+
+/*LA LINEA NEGRA QUE SEPARA EL NOMBRE Y LA FECHA*/
+.raya{
+    width: 90%;
+    height: 7px;
+    background-color: rgba(0, 0, 0, 0.877);
+    position: relative;
+    top: 27%;
+    margin: auto;
+    border-radius: 5px;}
+
+/*(INVISIBLE)ES LA CAJA DONDE ESTA ALOJADO LA FECHA DE LOS ARTICULOS*/
+.fechaarticulo{
+    width: 100%;
+    height: 20px;
+    top: 100%;
+    transform: translateY(-100%);
+    position: absolute;
+    margin-top: -3px;}
+
+/*(VISIBLE) CUADRO DONDE VA LA IMAGEN DE LINK EXTERNO*/
+.ir{
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    border-radius: 15px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    display: flex;}
+
+/*(VISIBLE) texto que dice = IR A VER*/
+h4{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 84%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 0.8;}
+
+/*(INVISIBLE) MARGEN INVISIBLE QUE DETECTA CLICK PARA REDIRECCIONAR*/
+a{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;}
+
+
+
+/*(IMAGEN SVG) VISIBLE , ESTA ES LA FLECHITA DE IMAGEN QUE ESTA EN 
+EL CENTRO DE LOS CUADROS DE ARTICULOS*/
+.externallink{
+    transform: scale(40%) translateY(-15%);}
+
+/*HHOOVVEER TRANSITION*/
+#description:hover{
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 100%;
+    height:35%;
+    background-color: rgb(48, 48, 48);}
+
+/*HHOOVVEER TRANSITION*/
+#description:hover h2{
+    color:white;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+
+/*HHOOVVEER TRANSITION*/
+.marginboxarticulos:hover{
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 380px;}
+
+/*HHOOVVEER TRANSITION*/
+.marginboxarticulos:hover .articulodescription{
+    opacity: 1;
+    transition: 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+
+/*HHOOVVEER TRANSITION*/
+.marginboxarticulos:hover .ir{
+    opacity: 1;
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);}

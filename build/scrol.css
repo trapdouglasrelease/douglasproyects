@@ -1,0 +1,44 @@
+/*EL SCROL DE LA DESCRIPCION*/
+#description::-webkit-scrollbar{
+    width: 12px;
+}
+
+#description::-webkit-scrollbar-thumb{
+    background: rgba(255, 255, 255, 0.699);
+    border-radius: 5px;
+}
+
+#description::-webkit-scrollbar-track{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/*EL SCROL DE EL NOMBRE DE ARTICULO*/
+.nombrearticulo::-webkit-scrollbar{
+    width: 7px;
+}
+
+.nombrearticulo::-webkit-scrollbar-thumb{
+    background: rgba(255, 182, 182, 0.733);
+    border-radius: 5px;
+}
+
+.nombrearticulo::-webkit-scrollbar-track{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+/*EL SCROL DE LOS ARTICULOS EN GENERAL*/
+.sectionarticulos::-webkit-scrollbar{
+    width: 12px;
+}
+
+.sectionarticulos::-webkit-scrollbar-thumb{
+    background: rgba(255, 255, 255, 0.095);
+    border-radius: 5px;
+}
+
+.sectionarticulos::-webkit-scrollbar-track{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
